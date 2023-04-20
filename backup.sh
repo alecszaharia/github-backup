@@ -60,10 +60,9 @@ do
     HTTP_ARCHIVE_URL="https://${GITHUB_USERNAME}:${OAUTH_TOKEN}@github.com/${REPO_FULLNAME}.git"
     CLONE_TARGET="${BACKUP_PATH}/$TODAY_DATE_PREFIX/${REPO_OWNER}/${REPO_NAME}.git"
     mkdir -p "${CLONE_TARGET}"
-    echo "Clone: ${SSH_ARCHIVE_URL} in ${CLONE_TARGET}";
-    git clone --mirror $HTTP_ARCHIVE_URL $CLONE_TARGET
-    #git clone --mirror $SSH_ARCHIVE_URL $CLONE_TARGET
-    echo "${COUNT}/${TOTAL_REPOSITORIES}: Clonned ${CLONE_TARGET}"
+    git clone --mirror --quiet $HTTP_ARCHIVE_URL $CLONE_TARGET
+    #git clone --mirror --quiet $SSH_ARCHIVE_URL $CLONE_TARGET
+    echo "${COUNT}/${TOTAL_REPOSITORIES}: Cloned ${REPO_FULLNAME} in ${CLONE_TARGET}"
 	  let COUNT++
 done
 
