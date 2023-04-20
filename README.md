@@ -1,3 +1,10 @@
+## Backup all your github repositories
+
+### Dependencies:
+```shell
+apt-get install -y jq
+```
+
 ### How wo run
 
 ```
@@ -5,6 +12,9 @@
 ```
 
 The script will clone all found repositories with --bare and --mirror.
+
+
+### How to restore
 All cloned repositories can be imported in a new account using  the following steps:
 
 1. Create a new repository on GitHub. You'll import your old Git repository to this new repository.
@@ -18,7 +28,7 @@ $ git push --mirror git@github.com:USER/NEW-REPO.git
 ```
 
 
-### Create a cron
+### Create a crontab
 
 The following crontab will run every Sunday at 3:00
 
